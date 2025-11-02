@@ -1,0 +1,85 @@
+{
+  "name": "My workflow 21",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://cjpafpvmkuwsxyqsblgo.supabase.co/functions/v1/health",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNqcGFmcHZta3V3c3h5cXNibGdvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIwNjU5OTQsImV4cCI6MjA3NzY0MTk5NH0.W3afZTQNSNzMaxI_kLP-1kzXZITIw8x8GLMBA4DTzd8"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "Functions"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "72fca6af-1272-4127-96d7-a1962d28e787",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cdd88500-107e-41c3-aaff-9aa0d29080ef",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "605859f3-5291-48d6-ab63-b1d6de402900",
+  "meta": {
+    "instanceId": "1cdfcad540c008f2f1395506e2079d6b58a3a66d8172cfc88e568958bdbb8cb9"
+  },
+  "id": "XZ9ZKcUAXLtGxb5S",
+  "tags": []
+}
